@@ -4,13 +4,19 @@
 
 ## 1.1 Project motivation
 Machine learning, neural networks, and artificial intelligence are becoming increasingly prevalent in everyone’s daily life. Amazon Alexa, Google Assistant, and Apple Siri are some of the most obvious uses of machine learning, taking advantage of deep learning and natural language processing (Pai), but machine learning has a variety of other uses.
+
 Machine learning helps Amazon give shoppers purchase suggestions. It provides the support behind autonomous driving. It can even be used to provide a 1984-esque level of control over a large population. No matter what happens, machine learning/deep learning is here to stay, with even more applications undoubtedly on the horizon.
 
 ## 1.2 Project goals
+
 The primary deliverable for this project was to create a simple virtual assistant using Python, taking advantage of previously built Python program modules. The virtual assistant activates once a certain keyword or phrase has been spoken. Once it detects the keyword, it then listens for other commands. The wake-up word that it detects is “Assistant”, similar to how Amazon’s virtual assistant, Alexa, will respond if you say “Alexa”. The virtual assistant works in real time, meaning that the virtual assistant will constantly listen for the word “Assistant”.
+
 This assistant can execute simple commands, such as setting a timer, telling jokes, or telling the time. Using a text-to-speech program, the assistant can also respond back to the user.
+
 Another major component of the project was creating a selfie function for the virtual assistant. This function allows the user to take pictures of themselves. What makes this function stand out is that it only allows the user to take a picture when it detects that both of the user’s eyes are open, ensuring that all selfies will have open eyes.
+
 In the process of completing the objectives, I used pre-built machine learning packages to learn how others, including people in industry, might apply machine learning in their work. As a beginner in machine learning, I believe that this is an important first step in my machine learning/artificial intelligence education. Since I do not have much theoretical knowledge of machine learning yet, it is important that I utilize what others have built first, before creating my own machine learning programs.
+
 Also, over the course of this project, prior work done in the field of machine learning and the applications of machine learning were investigated. This was done to better understand what types of work had already been accomplished in the field of machine learning, deepening my understanding of the history of the topic.
 
 # 2 Description of approach – Tier 1
