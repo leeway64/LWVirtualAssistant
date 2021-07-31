@@ -1,6 +1,6 @@
-# Lee-Way Wang
-# 11 August 2020
 # This file contains all of the functions needed to run the virtual assistant
+
+
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 
@@ -143,17 +143,21 @@ def speak(phrase):
     playsound('output.mp3')  # Play the sound file
     os.remove("output.mp3")  # Remove the sound file. This is necessary, because otherwise an error is thrown
 
+
 # Global variables. They need to be global because the chatbot must be trained before the program starts, for the
 # user's convenience. These variables could be inside the talk_to_chatbot function, but that would cause a pause
 # right in the middle of the user's interaction with the virtual assistant. It would be more user-friendly to load
 # everything up front.
 chatbot = ChatBot('Assistant')
 
+
 # Create a new trainer for the chatbot
 trainer = ChatterBotCorpusTrainer(chatbot)
 
+
 # Train the chatbot based on the english corpus
 trainer.train("chatterbot.corpus.english")
+
 
 # This function allows the user to talk to a chatbot using either their voice or through text input.
 # The chatbot will use either text-to-speech or text to respond back to the user.
