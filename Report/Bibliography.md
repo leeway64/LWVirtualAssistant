@@ -58,6 +58,7 @@ Geitgey, Adam. “Machine Learning is Fun! Part 4: Modern Face Recognition with 
 “Google Vision API: Draw Object Borders Using Pillow Python Library.” YouTube, uploaded by Jie Jenn, 23 July 2019, https://www.youtube.com/watch?v=tvUy8YQxRTQ&t=0s. Accessed 8 August 2020.
 
 “How Face ID Works... Probably - Computerphile.” YouTube, uploaded by Computerphile, 1 Nov. 2018, https://www.youtube.com/watch?v=mwTaISbA87A. Accessed 6 August 2020.
+
 Ivancic, Kristijan. “Traditional Face Detection With Python.” Real Python, https://realpython.com/traditional-face-detection-python/. Accessed 20 July 2020.
 
 “OpenCV Python TUTORIAL #4 for Face Recognition and Identification.” YouTube, uploaded by CodingEntrepreneurs, 11 April 2018, https://www.youtube.com/watch?v=PmZ29Vta7Vc&t. Accessed 21 July 2020
