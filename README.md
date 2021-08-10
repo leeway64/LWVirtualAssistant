@@ -7,4 +7,6 @@ This project was part of an undergraduate research project, completed in August 
 
 I would like to thank UW Bothell professor Dr. Kaibao Nie for giving me helpful suggestions throughout this project.
 
-Refer to the [bibliography](https://github.com/leeway64/Elementary-Python-Based-Virtual-Assistant/blob/master/Report/Bibliography.md) for all sources behind this project.
+Refer to the [bibliography](/Report/Bibliography.md) for all sources behind this project.
+
+Some of the required modules for this project cannot be installed using pip install. Refer to the installation instructions for these modules [here](Report/InstallationInstructionsForModules.rst).
