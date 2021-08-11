@@ -8,21 +8,19 @@ directly using pip install.
 How to install PyAudio
 -----------------------
 
-PyAudio is the package that allows for microphone input. This module is necessary for the SpeechRecognition module to function.
+PyAudio is the package that allows for microphone input. This module is necessary for the
+SpeechRecognition module to function.
 
 1)  Make sure Python is installed using the installer from https://www.python.org/downloads/windows/.
     Select “Download Windows x86-64 executable installer” under “stable releases”. Once you open the
     executable installer, select “Add Python 3.8 to PATH”.
 
-2)	Go to https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio and install
-    “PyAudio-0.2.11-cp38-cp38-win32.whl”, which is the wheel file for PyAudio for Python 3.8,
-    Windows 32.
+2)	Go to https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio and install “PyAudio-0.2.11-cp38-cp38-win32.whl”,
+    which is the wheel file for PyAudio for Python 3.8, Windows 32.
 
-3)	Cut and paste the .whl file into
-    C:\Users\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\.
+3)	Cut and paste the .whl file into C:\Users\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\.
     The scripts folder is under the default location in which Python is installed. In the command
-    prompt, type in
-    “pip install C:\Users\\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\PyAudio-0.2.11-cp38-cp38-win32.whl”.
+    prompt, type in “pip install C:\Users\\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\PyAudio-0.2.11-cp38-cp38-win32.whl”.
     This should automatically install PyAudio into Python.
 
 Steps primarily taken from https://www.youtube.com/watch?v=AKymlea8sYM (“How to (Succesfully)
@@ -62,16 +60,11 @@ the ChatterBot package.
 1)	Follow the steps in listed in Section 7.1 but install spacy-2.3.0-cp38-cp38-win_amd64.whl
     instead.
 
-2)	spaCy will download several other packages automatically. However, there are several more
-    packages you must install manually. Using pip, install the “mathparse”, “nltk”, “pint”,
-    “python-dateutil”, “pyyaml”, and “chatterbot-corpus” modules. If there are any error messages,
-    install any other modules that are required.
-
 SCREENSHOT HERE
 
-3)	Then, run as administrator the following command in the cmd prompt: python -m spacy download en
+2)	Then, run as administrator the following command in the cmd prompt: python -m spacy download en
 
-4)	Note: there are several methods to run the Command Prompt as administrator
+3)	Note: there are several methods to run the Command Prompt as administrator
 
     a)	Press Windows key + R. Type cmd, then press shift + control + enter.
 
