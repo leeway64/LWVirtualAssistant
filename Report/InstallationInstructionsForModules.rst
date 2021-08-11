@@ -20,7 +20,7 @@ SpeechRecognition module to function.
 
 3. Cut and paste the .whl file into C:\Users\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\.
    The scripts folder is under the default location in which Python is installed. In the command
-   prompt, type in “pip install C:\Users\\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\PyAudio-0.2.11-cp38-cp38-win32.whl”.
+   prompt, type in ``pip install C:\Users\\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\PyAudio-0.2.11-cp38-cp38-win32.whl``.
    This should automatically install PyAudio into Python.
 
 Steps primarily taken from https://www.youtube.com/watch?v=AKymlea8sYM (“How to (Succesfully)
@@ -41,15 +41,11 @@ ChatterBot is the package that allows for a simple chatbot.
    (the same location where you pasted the .whl file for PyAudio).
 
 3. Open the “ChatterBot-master” folder. Click on the header, then type “cmd” and hit enter. This
-   should open a Command Prompt window.
+   should open a Command Prompt window for the current folder.
 
-SCREENSHOT HERE
-
-4. Inside the Command Prompt window, type in “python setup.py install”. This should install the
+4. Inside the Command Prompt window, type in ``python setup.py install``. This should install the
    ChatterBot module. Refer to this webpage for more information:
    https://www.activestate.com/resources/quick-reads/how-to-manually-install-python-packages/.
-
-SCREENSHOT HERE
 
 How to install spaCy
 --------------------
@@ -57,12 +53,11 @@ How to install spaCy
 spaCy is package for advanced NLP (natural language processing). This package is a requirement for
 the ChatterBot package.
 
-1. Follow the steps in listed in Section 7.1 but install spacy-2.3.0-cp38-cp38-win_amd64.whl
+1. Follow the steps to install PyAudio but install spacy-2.3.0-cp38-cp38-win_amd64.whl
    instead.
 
-SCREENSHOT HERE
-
-2. Then, run as administrator the following command in the cmd prompt: python -m spacy download en
+2. Then, run as administrator the following command in the cmd prompt:
+   ``python -m spacy download en``
 
 3. Note: there are several methods to run the Command Prompt as administrator
 
@@ -70,4 +65,3 @@ SCREENSHOT HERE
 
    b. Press the Windows key and search for cmd. Right click on the “Command Prompt” result that
       shows up, then select “Run as administrator”.
-      
