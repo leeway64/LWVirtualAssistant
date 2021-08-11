@@ -1,4 +1,4 @@
-# Elementary Python Based Virtual Assistant
+# Elementary Python-based Virtual Assistant
 
 This project provides a very simple voice-controlled virtual assistant.
 
@@ -9,4 +9,4 @@ I would like to thank UW Bothell professor Dr. Kaibao Nie for giving me helpful 
 
 Refer to the [bibliography](/Report/Bibliography.md) for all sources behind this project.
 
-Some of the required modules for this project cannot be installed using pip install. Refer to the installation instructions for these modules [here](Report/InstallationInstructionsForModules.rst).
+Some of the required modules for this project cannot be installed from the requirements.txt file using pip install. Refer to the installation instructions for these modules [here](Report/InstallationInstructionsForModules.rst).
