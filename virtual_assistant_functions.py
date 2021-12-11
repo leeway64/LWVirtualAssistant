@@ -197,7 +197,6 @@ def take_selfie():
     video_capture = cv2.VideoCapture(0)  # Set video source to default webcam
 
     while True:
-
         # Capture frame-by-frame
         # Return code tells us if we've run out of frames, but this won't happen because we're using a webcam
         # Only applicable if using a video as the source
@@ -260,14 +259,12 @@ def take_selfie():
 # If the trigger phrase is in the converted speech, then the virtual assistant will activate
 # Returns the virtual assistant's response
 def execute_commands(converted_speech, enable_text_input):
-
     trigger_phrase = "assistant"
 
     # spoken_phrase = "Trigger phrase was not heard"
     spoken_phrase = "trigger phrase was not detected"
 
     if trigger_phrase in converted_speech:
-
         # Conditions for creating a note. If the program hears these words, then it will create a note
         create_note_phrases = ["note", "reminder", "write this down", "remember"]
         create_note_condition = any(word in converted_speech for word in create_note_phrases)
