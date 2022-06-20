@@ -5,20 +5,17 @@ Certain required modules for the virtual assistant may be confusing to install. 
 clears up some of the confusion by providing instructions for the modules that can't be installed
 directly using pip install.
 
+
 How to install PyAudio
 -----------------------
 
 PyAudio is the package that allows for microphone input. This module is necessary for the
 SpeechRecognition module to function.
 
-1. Make sure Python is installed using the installer from https://www.python.org/downloads/windows/.
-   Select “Download Windows x86-64 executable installer” under “stable releases”. Once you open the
-   executable installer, select “Add Python 3.8 to PATH”.
-
-2. Go to https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio and install “PyAudio-0.2.11-cp38-cp38-win32.whl”,
+1. Go to https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio and install “PyAudio-0.2.11-cp38-cp38-win32.whl”,
    which is the wheel file for PyAudio for Python 3.8, Windows 32.
 
-3. Cut and paste the .whl file into C:\Users\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\.
+2. Cut and paste the .whl file into C:\Users\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\.
    The scripts folder is under the default location in which Python is installed. In the command
    prompt, type in ``pip install C:\Users\\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\PyAudio-0.2.11-cp38-cp38-win32.whl``.
    This should automatically install PyAudio into Python.
@@ -37,15 +34,14 @@ ChatterBot is the package that allows for a simple chatbot.
    information: https://stackoverflow.com/questions/44925395/error-while-installing-chatterbot.
 
 2. Extract the zip folder and cut and paste the extracted folder into
-   C:\Users\[insert_name_here]\AppData\Local\Programs\Python\Python38\Scripts
-   (the same location where you pasted the .whl file for PyAudio).
+   the same location where you pasted the .whl file for PyAudio.
 
-3. Open the “ChatterBot-master” folder. Click on the header, then type “cmd” and hit enter. This
-   should open a Command Prompt window for the current folder.
+3. Open the “ChatterBot-master” folder.
 
-4. Inside the Command Prompt window, type in ``python setup.py install``. This should install the
+4. Inside the terminal window, type in ``python setup.py install``. This should install the
    ChatterBot module. Refer to this webpage for more information:
    https://www.activestate.com/resources/quick-reads/how-to-manually-install-python-packages/.
+
 
 How to install spaCy
 --------------------

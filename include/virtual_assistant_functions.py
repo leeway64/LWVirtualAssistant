@@ -17,7 +17,6 @@ def imshow_fullscreen(window_name, image):
     cv2.imshow(window_name, image)
 
 
-# Function shows a random image
 def show_random_image():
     base_directory = os.path.dirname(os.path.abspath(__file__))  # Directory that this file is located in
     image_dictionary = {}  # Dictionary that holds a number and its corresponding image
@@ -124,7 +123,7 @@ def convert_speech_to_text():
     try:
         converted_speech = r.recognize_google(audio)
     except sr.UnknownValueError:
-        converted_speech = "Speech was unrecognizable. Please say again"
+        converted_speech = "Speech was unrecognizable. Please say again."
     return converted_speech
 
 
@@ -134,7 +133,7 @@ def speak(phrase):
     my_obj = gTTS(text=phrase, lang=language, slow=False)
     my_obj.save("output.mp3")  # Save the sound file of the speech
     playsound('output.mp3')  # Play the sound file
-    os.remove("output.mp3")  # Remove the sound file. This is necessary, because otherwise an error is thrown
+    os.remove("output.mp3")  # Remove the sound file. This is necessary, because otherwise an error is thrown.
 
 
 # Global variables. They need to be global because the chatbot must be trained before the program starts, for the
@@ -277,7 +276,7 @@ def execute_commands(converted_speech, enable_text_input):
         elif "your name" in converted_speech:
             spoken_phrase = "My name is Assistant, pleased to meet you."
         elif "joke" in converted_speech:
-            spoken_phrase = "How do billboards talk? Sign language"
+            spoken_phrase = "How do billboards talk? Sign language."
         elif "date" in converted_speech:
             spoken_phrase = get_calendar_date()
         elif "the time" in converted_speech:
@@ -300,11 +299,12 @@ def execute_commands(converted_speech, enable_text_input):
             take_selfie()
         elif create_note_condition:
             # Create a txt reminder in notepad
+            response = "what would you like me to write down?"
             if not enable_text_input:
-                speak("what would you like me to write down?")
+                speak(response)
                 note_text = convert_speech_to_text()
             else:
-                print("what would you like me to write down?")
+                print(response)
                 note_text = input("Enter a note: ")
 
             create_note(note_text)
