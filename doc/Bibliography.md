@@ -6,21 +6,11 @@ Amos, David. “The Ultimate Guide to Speech Recognition with Python.” Real Py
 
 “Convert Text to Speech in Python.” Geeks for Geeks, https://www.geeksforgeeks.org/convert-text-speech-python/. Accessed 25 June 2020.
 
-Cox, Gunther. “ChatterBot.” GitHub, 1 May 2020, https://github.com/gunthercox/ChatterBot. Accessed 4 July 2020.
-
-Cox, Gunther. “Quick Start Guide.” chatterbot.readthedocs, https://chatterbot.readthedocs.io/en/latest/quickstart.html#training-your-chatbot. Accessed 4 July 2020.
-
-“Create your own Chatbot using Python #1.” YouTube, uploaded by Dinesh Sambasivan, 22 Jan. 2018, https://www.youtube.com/watch?v=_U146hWhDhM&list=WL&index=105. Accessed 4 July 2020.
-
 de Langen, Joska. “Playing and Recording Sound in Python.” Real Python, https://realpython.com/playing-and-recording-sound-python/. Accessed 25 June 2020.
 
 Durette, Pierre Nicholas. “gTTS.” GitHub, 25 Jan. 2020, https://github.com/pndurette/gTTS. Accessed 26 June 2020.
 
 Geitgey, Adam. “Machine Learning is Fun! Part 6: How to do Speech Recognition with Deep Learning.” Medium, 23 Dec. 2016, https://medium.com/@ageitgey/machine-learning-is-fun-part-6-how-to-do-speech-recognition-with-deep-learning-28293c162f7a. Accessed 15 June 2020.
-
-“HOW TO CREATE A CHATBOT WITH PYTHON AND CHATTERBOT.” YouTube, uploaded by Código Logo, 24 Oct. 2017, https://www.youtube.com/watch?v=3k8OFy-etoo&list=WL&index=116&t=0s. Accessed 4 July 2020.
-
-“How to (Succesfully) Install PyAudio.” YouTube, uploaded by Carbaretta, 19 May 2019, https://www.youtube.com/watch?v=AKymlea8sYM. Accessed 30 June 2020.
 
 jleb. “pyaudio.” GitHub, https://github.com/jleb/pyaudio. Accessed 17 August 2020.
 
@@ -34,8 +24,6 @@ Pai, Aravind. “Learn how to Build your own Speech-to-Text Model (using Python)
 
 “SciPy.” SciPy, 21 June 2020, https://docs.scipy.org/doc/scipy/reference/. Accessed 26 June 2020.
 spatialaudio. “python-sounddevice.” GitHub, 18 July 2020, https://github.com/spatialaudio/python-sounddevice/. Accessed 13 August 2020.
-
-The problem here is not ChatterBot but the pip command… Comment on “Error while installing chatterBot.” StackOverflow, 5 July 2017, 11:56 a.m., https://stackoverflow.com/questions/44925395/error-while-installing-chatterbot. Accessed 3 July 2020.
 
 “Voice Recognition As Fast As Possible.” YouTube, uploaded by Techquickie, 5 Oct. 2015, www.youtube.com/watch?v=AWWjN1QqoYY. Accessed 1 July 2020.
 Zhang, Anthony. “speech_recognition.” GitHub, 5 Dec. 2017, https://github.com/Uberi/speech_recognition. Accessed 26 June 2020.
@@ -74,11 +62,6 @@ Viola, Paul, and Michael Jones. "Rapid Object Detection Using a Boosted Cascade 
 “Vision AI.” Google Cloud, https://cloud.google.com/vision. Accessed 1 August 2020.
 
 ## Bibliography for miscellaneous information
-
-Gohlke, Christoph. “Unofficial Windows Binaries for Python Extension Packages.” Laboratory for Fluorescence Dynamics, https://www.lfd.uci.edu/~gohlke/pythonlibs/. Accessed 5 July 2020.
-
-“How To Manually Install Python Packages.” ActiveState, https://www.activestate.com/resources/quick-reads/how-to-manually-install-python-packages/. Accessed 7 July 2020.
-“Python Releases for Windows”. Python, https://www.python.org/downloads/windows/. Accessed 1 July 2020.
 
 Use this, THIS IS FOR EXTRACTING NUMBER FROM STRING IN GENERAL… Comment on “Extract Number from String in Python.” Stack Overflow, 4 July 2019, 12:59 p.m., https://stackoverflow.com/questions/26825729/extract-number-from-string-in-python. Accessed 27 June 2020.
 

@@ -263,7 +263,7 @@ def execute_commands(converted_speech, enable_text_input):
 
 
 def activate_virtual_assistant(enable_text_input):
-    print("Start")
+    print("Starting the virtual assistant")
 
     # User can specify whether or not they want to use text input to control the virtual assistant
     # If converted_speech = "text input", then the user can input text. Otherwise, the user uses their voice to control

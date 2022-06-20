@@ -13,12 +13,20 @@ pip install -r requirements.txt
 
 ```
 
-Some of the required modules for this project cannot be installed from the requirements.txt file
-using pip install. Refer to the installation instructions for these modules
-[here](doc/InstallationInstructionsForModules.rst).
+
+## Examples
+
+### Using voice input
+
+```
+```
 
 
-## Usage
+### Using text input
+
+```
+```
+
 
 
 ## Documentation
@@ -34,3 +42,7 @@ Refer to the [bibliography](doc/Bibliography.md) for all sources behind this pro
 
 
 ## Third-party tools
+
+- gTTS
+
+- OpenCV
