@@ -250,7 +250,7 @@ def execute_commands(converted_speech, enable_text_input):
                 note_text = convert_speech_to_text()
             else:
                 print(response)
-                note_text = input("Enter a note: ")
+                note_text = input("\tEnter a note: ")
 
             create_note(note_text)
             spoken_phrase = "I've made a note of that"
@@ -263,7 +263,7 @@ def execute_commands(converted_speech, enable_text_input):
 
 
 def activate_virtual_assistant(enable_text_input):
-    print("Starting the virtual assistant")
+    print("Starting LWVirtualAssistant")
 
     # User can specify whether or not they want to use text input to control the virtual assistant
     # If converted_speech = "text input", then the user can input text. Otherwise, the user uses their voice to control
@@ -272,8 +272,8 @@ def activate_virtual_assistant(enable_text_input):
 
     if enable_text_input:
         while "quit" not in converted_speech:
-            print("Ready for a command")
-            converted_speech = input("Enter a command: ")
+            print("\nReady for a command")
+            converted_speech = input("\tEnter a command: ")
             if "quit" not in converted_speech:
                 print(execute_commands(converted_speech.lower(), True))
 
