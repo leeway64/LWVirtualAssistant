@@ -3,6 +3,16 @@ This project provides a very simple voice-controlled virtual assistant, implemen
 
 
 ## Installation
+LWVirtualAssistant is compatible with Ubuntu.
+
+
+```sh
+git clone https://github.com/leeway64/LWVirtualAssistant.git
+sudo apt install portaudio19-dev
+pip install -r requirements.txt
+
+```
+
 Some of the required modules for this project cannot be installed from the requirements.txt file
 using pip install. Refer to the installation instructions for these modules
 [here](doc/InstallationInstructionsForModules.rst).

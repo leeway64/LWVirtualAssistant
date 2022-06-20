@@ -6,8 +6,6 @@ import random
 import speech_recognition as sr
 from gtts import gTTS
 from playsound import playsound
-from chatterbot import ChatBot
-from chatterbot.trainers import ChatterBotCorpusTrainer
 import cv2
 
 
@@ -136,52 +134,6 @@ def speak(phrase):
     os.remove("output.mp3")  # Remove the sound file. This is necessary, because otherwise an error is thrown.
 
 
-# Global variables. They need to be global because the chatbot must be trained before the program starts, for the
-# user's convenience. These variables could be inside the talk_to_chatbot function, but that would cause a pause
-# right in the middle of the user's interaction with the virtual assistant. It would be more user-friendly to load
-# everything up front.
-chatbot = ChatBot('Assistant')
-
-
-# Create a new trainer for the chatbot
-trainer = ChatterBotCorpusTrainer(chatbot)
-
-
-# Train the chatbot based on the english corpus
-trainer.train("chatterbot.corpus.english")
-
-
-# This function allows the user to talk to a chatbot using either their voice or through text input.
-# The chatbot will use either text-to-speech or text to respond back to the user.
-# As long as the input phrase does not contain any of the stop conversation keywords, then the chatbot conversation
-# will keep going.
-def talk_to_chatbot(enable_text_input):
-    stop_conversation_keywords = ["farewell", "exit", "stop", "goodbye", "quit"]
-
-    if enable_text_input:
-        print("What would you like to talk about?")
-    else:
-        speak("What would you like to talk about?")
-
-    while True:
-        if enable_text_input:
-            input_phrase = input("Type your response: ")
-        else:
-            input_phrase = convert_speech_to_text()
-            print(input_phrase)
-
-        if input_phrase != "Speech was unrecognizable. Please say again":
-            # Need to explicitly turn the response into a string. Otherwise, an attribute error will be thrown
-            if any(word in input_phrase for word in stop_conversation_keywords):
-                break
-            else:
-                response = chatbot.get_response(input_phrase)
-                if enable_text_input:
-                    print("Chatbot: ", response)
-                else:
-                    speak(str(response))
-
-
 def take_selfie():
     faceCascade = cv2.CascadeClassifier('cascades/data/haarcascade_frontalface_alt2.xml')
     eye_cascade = cv2.CascadeClassifier('cascades/data/haarcascade_eye.xml')
@@ -261,10 +213,6 @@ def execute_commands(converted_speech, enable_text_input):
         create_note_phrases = ["note", "reminder", "write this down", "remember"]
         create_note_condition = any(word in converted_speech for word in create_note_phrases)
 
-        # Conditions for activating the chatbot. If the program hears these words, then it will create a note
-        start_chat_bot_phrases = ["talk", "conversation", "chat", "discuss", "discussion"]
-        start_chat_bot_condition = any(word in converted_speech for word in start_chat_bot_phrases)
-
         show_image_phrases = ["picture", "image", "photo"]
         show_image_condition = any(word in converted_speech for word in show_image_phrases)
 
@@ -283,9 +231,6 @@ def execute_commands(converted_speech, enable_text_input):
             spoken_phrase = get_clock_time()
         elif "timer for" in converted_speech:
             spoken_phrase = set_timer(converted_speech, enable_text_input)
-        elif start_chat_bot_condition:
-            talk_to_chatbot(enable_text_input)
-            spoken_phrase = "It was great talking to you"
         elif show_image_condition:
             spoken_phrase = "Showing a random image"
             show_random_image()

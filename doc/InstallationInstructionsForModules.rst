@@ -6,24 +6,6 @@ clears up some of the confusion by providing instructions for the modules that c
 directly using pip install.
 
 
-How to install PyAudio
------------------------
-
-PyAudio is the package that allows for microphone input. This module is necessary for the
-SpeechRecognition module to function.
-
-1. Go to https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio and install “PyAudio-0.2.11-cp38-cp38-win32.whl”,
-   which is the wheel file for PyAudio for Python 3.8, Windows 32.
-
-2. Cut and paste the .whl file into C:\Users\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\.
-   The scripts folder is under the default location in which Python is installed. In the command
-   prompt, type in ``pip install C:\Users\\[insert_name_here]\AppData\Local\Programs\Python\Python38-32\Scripts\PyAudio-0.2.11-cp38-cp38-win32.whl``.
-   This should automatically install PyAudio into Python.
-
-Steps primarily taken from https://www.youtube.com/watch?v=AKymlea8sYM (“How to (Succesfully)
-Install PyAudio”)
-
-
 How to install ChatterBot
 -------------------------
 
