@@ -1,5 +1,6 @@
 # LWVirtualAssistant
-This project provides a very simple voice-controlled virtual assistant, implemented in Python.
+LWVirtualAssistant is a basic voice-controlled virtual assistant that can take a selfie, set a
+timer, and create a note, among other features. 
 
 
 ## Installation
@@ -10,7 +11,6 @@ LWVirtualAssistant is compatible with Ubuntu.
 git clone https://github.com/leeway64/LWVirtualAssistant.git
 sudo apt install portaudio19-dev
 pip install -r requirements.txt
-
 ```
 
 
@@ -27,7 +27,6 @@ python include/start_virtual_assistant.py voice_input
 
 ```
 python include/start_virtual_assistant.py text_input
-
 ```
 
 
@@ -40,7 +39,7 @@ more about this project in the [documentation](doc/README.md).
 I would like to thank UW Bothell professor Dr. Kaibao Nie for giving me helpful suggestions
 throughout this project.
 
-Refer to the [bibliography](doc/Bibliography.md) for all the sources behind this project, including.
+Refer to the [bibliography](doc/Bibliography.md) for all sources behind this project.
 
 
 ## Third-party tools

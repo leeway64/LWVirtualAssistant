@@ -9,3 +9,7 @@ __pycache__/
 
 db.*
 
+
+# Notes created by the virtual assistant
+*note.txt
+

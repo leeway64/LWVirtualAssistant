@@ -244,7 +244,7 @@ def execute_commands(converted_speech, enable_text_input):
             take_selfie()
         elif create_note_condition:
             # Create a txt reminder in notepad
-            response = "what would you like me to write down?"
+            response = "What would you like me to write down?"
             if not enable_text_input:
                 speak(response)
                 note_text = convert_speech_to_text()
