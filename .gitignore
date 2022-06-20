@@ -1,3 +1,7 @@
 # Python files
 .venv/
 __pycache__/
+
+
+# IDE settings
+.idea/
