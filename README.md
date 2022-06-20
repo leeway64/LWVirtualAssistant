@@ -47,7 +47,7 @@ Refer to the [bibliography](doc/Bibliography.md) for all sources behind this pro
 - [gTTS](https://pypi.org/project/gTTS/) (MIT License): Google Text-to-Speech.
 - [OpenCV](https://pypi.org/project/opencv-python/) (MIT License): Open Source Computer Vision
   Library.
-- [SpeechRecognition](https://github.com/Uberi/speech_recognition#readme) (BSD-3-Clause): Speech
+- [SpeechRecognition](https://github.com/Uberi/speech_recognition) (BSD-3-Clause): Speech
   recognition using Python.
 - [Playsound](https://pypi.org/project/playsound/) (MIT License): Package for playing sounds using
   Python.
