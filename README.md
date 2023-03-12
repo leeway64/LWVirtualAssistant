@@ -1,32 +1,35 @@
 # LWVirtualAssistant
-LWVirtualAssistant is a basic voice-controlled virtual assistant that can take a selfie, set a
-timer, and create a note, among other features. 
+LWVirtualAssistant is a very basic voice-controlled virtual assistant that can take a selfie, set a
+timer, and create a note, among other features.
 
 
 ## Installation
-LWVirtualAssistant is compatible with Ubuntu.
-
-
-```sh
+```bash
 git clone https://github.com/leeway64/LWVirtualAssistant.git
-sudo apt install portaudio19-dev
+cd LWVirtualAssistant
 pip install -r requirements.txt
 ```
+For Ubuntu, you will also have to install portaudio by running `sudo apt install portaudio19-dev`.
 
 
-## Examples
-
-### Using voice input
-
-```
+## Usage
+To use voice input to control the virtual assistant, run:
+```bash
 python include/start_virtual_assistant.py voice_input
 ```
 
-
-### Using text input
-
-```
+To use text input to control the virtual assistant, run:
+```bash
 python include/start_virtual_assistant.py text_input
+```
+
+For a full list of tasks LWVirtualAssistant can perform, speak "help" if you are using voice input,
+or type "help" if you are using text input. For example, if you are using text input:
+
+```bash
+$ python include/start_virtual_assistant.py text_input
+
+
 ```
 
 
@@ -42,8 +45,7 @@ throughout this project.
 Refer to the [bibliography](doc/Bibliography.md) for all sources behind this project.
 
 
-## Third-party tools
-
+## Third-Party Software
 - [gTTS](https://pypi.org/project/gTTS/) (MIT License): Google Text-to-Speech.
 - [OpenCV](https://pypi.org/project/opencv-python/) (MIT License): Open Source Computer Vision
   Library.
@@ -51,4 +53,3 @@ Refer to the [bibliography](doc/Bibliography.md) for all sources behind this pro
   recognition using Python.
 - [Playsound](https://pypi.org/project/playsound/) (MIT License): Package for playing sounds using
   Python.
-
