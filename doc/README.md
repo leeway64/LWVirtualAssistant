@@ -85,4 +85,3 @@ taking a selfie), experimenting with different computer vision programs and pack
 on an implementation of the selfie function was a valuable learning experience for me. The computer
 vision programs/packages that were studied were OpenCV, face_recognition, and the Google Cloud Vision
 API. Ultimately, OpenCV was used in this virtual assistant.
-

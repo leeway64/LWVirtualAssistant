@@ -1,7 +1,6 @@
 from datetime import datetime
 import os
 import time
-import random
 
 import speech_recognition as sr
 from gtts import gTTS
@@ -9,33 +8,7 @@ from playsound import playsound
 import cv2
 
 
-def imshow_fullscreen(window_name, image):
-    cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
-    cv2.setWindowProperty(window_name, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-    cv2.imshow(window_name, image)
-
-
-def show_random_image():
-    base_directory = os.path.dirname(os.path.abspath(__file__))  # Directory that this file is located in
-    image_dictionary = {}  # Dictionary that holds a number and its corresponding image
-    counter = 0
-    for root, dirs, files in os.walk(base_directory):
-        for file in files:
-            if file.endswith("png") or file.endswith("jpg") or file.endswith("JPG") or file.endswith("jpeg"):
-                path_to_file = os.path.join(root, file)  # the path of the file
-                image_dictionary[counter] = path_to_file
-                counter += 1
-
-    random_number = random.randint(0, counter-1)
-    image = image_dictionary[random_number]
-    image = cv2.imread(image)
-
-    imshow_fullscreen("Image", image)
-    cv2.waitKey(0)  # Closes the window once the user presses a key
-    cv2.destroyAllWindows()
-
-
-# Function returns the current time inside a string
+# Returns the current time as a string
 def get_clock_time():
     current_time = datetime.now()
     if current_time.hour == 0:
@@ -71,7 +44,7 @@ def get_calendar_date():
     return calendar_date
 
 
-# Function counts down the number of seconds, based on minutes and seconds
+# Counts down the number of seconds, based on minutes and seconds
 # Returns a string signalling that the program has counted down to 0
 def countdown(minute, sec):
     total_time = (60 * minute) + sec
@@ -109,29 +82,10 @@ def create_note(text):
         f.write(text)
 
 
-# This function recognizes speech from a microphone. Converts the speech into text, and then returns that text
-# If the speech was unrecognizable (perhaps there was too much ambient background noise), then the converted speech
-# automatically becomes "Speech was unrecognizable. Please say again"
-def convert_speech_to_text():
-    r = sr.Recognizer()
-    mic = sr.Microphone()
-    with mic as source:
-        r.adjust_for_ambient_noise(source, duration=0.5)
-        audio = r.listen(source)
-    try:
-        converted_speech = r.recognize_google(audio)
-    except sr.UnknownValueError:
-        converted_speech = "Speech was unrecognizable. Please say again."
-    return converted_speech
-
-
-# This function speaks out loud a certain input phrase
-def speak(phrase):
-    language = 'en'
-    my_obj = gTTS(text=phrase, lang=language, slow=False)
-    my_obj.save("output.mp3")  # Save the sound file of the speech
-    playsound('output.mp3')  # Play the sound file
-    os.remove("output.mp3")  # Remove the sound file. This is necessary, because otherwise an error is thrown.
+def imshow_fullscreen(window_name, image):
+    cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
+    cv2.setWindowProperty(window_name, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+    cv2.imshow(window_name, image)
 
 
 def take_selfie():
@@ -199,22 +153,41 @@ def take_selfie():
     cv2.destroyAllWindows()
 
 
+# Speaks out loud the input phrase
+def speak(phrase):
+    language = 'en'
+    my_obj = gTTS(text=phrase, lang=language, slow=False)
+    my_obj.save("output.mp3")  # Save the sound file of the speech
+    playsound('output.mp3')  # Play the sound file
+    os.remove("output.mp3")  # Remove the sound file. This is necessary, because otherwise an error is thrown.
+
+
+# Converts speech from a microphone into a string, then returns that string
+# If the speech was unrecognizable (perhaps there was too much ambient background noise), then the converted speech
+# automatically becomes "Speech was unrecognizable. Please say again"
+def convert_speech_to_text():
+    r = sr.Recognizer()
+    mic = sr.Microphone()
+    with mic as source:
+        r.adjust_for_ambient_noise(source, duration=0.5)
+        audio = r.listen(source)
+    try:
+        converted_speech = r.recognize_google(audio)
+    except sr.UnknownValueError:
+        converted_speech = "Speech was unrecognizable. Please say again."
+    return converted_speech
+
+
 # This function executes the different voice commands that the user might give the virtual assistant.
 # If the trigger phrase is in the converted speech, then the virtual assistant will activate
 # Returns the virtual assistant's response
 def execute_commands(converted_speech, enable_text_input):
+    spoken_phrase = "Trigger phrase was not detected"
+
     trigger_phrase = "assistant"
-
-    # spoken_phrase = "Trigger phrase was not heard"
-    spoken_phrase = "trigger phrase was not detected"
-
     if trigger_phrase in converted_speech:
-        # Conditions for creating a note. If the program hears these words, then it will create a note
         create_note_phrases = ["note", "reminder", "write this down", "remember"]
         create_note_condition = any(word in converted_speech for word in create_note_phrases)
-
-        show_image_phrases = ["picture", "image", "photo"]
-        show_image_condition = any(word in converted_speech for word in show_image_phrases)
 
         take_selfie_phrases = ["selfie"]
         take_selfie_condition = any(word in converted_speech for word in take_selfie_phrases)
@@ -231,9 +204,6 @@ def execute_commands(converted_speech, enable_text_input):
             spoken_phrase = get_clock_time()
         elif "timer for" in converted_speech:
             spoken_phrase = set_timer(converted_speech, enable_text_input)
-        elif show_image_condition:
-            spoken_phrase = "Showing a random image"
-            show_random_image()
         elif take_selfie_condition:
             spoken_phrase = "Opening camera. Press q to take a selfie."
             if enable_text_input:
@@ -242,8 +212,7 @@ def execute_commands(converted_speech, enable_text_input):
                 speak(spoken_phrase)
             spoken_phrase = "Selfie taken"
             take_selfie()
-        elif create_note_condition:
-            # Create a txt reminder in notepad
+        elif create_note_condition:  # Create a txt reminder
             response = "What would you like me to write down?"
             if not enable_text_input:
                 speak(response)
@@ -265,11 +234,8 @@ def execute_commands(converted_speech, enable_text_input):
 def activate_virtual_assistant(enable_text_input):
     print("Starting LWVirtualAssistant")
 
-    # User can specify whether or not they want to use text input to control the virtual assistant
-    # If converted_speech = "text input", then the user can input text. Otherwise, the user uses their voice to control
-    # the program
+    exit_message = "Thank you for using this virtual assistant"
     converted_speech = ""
-
     if enable_text_input:
         while "quit" not in converted_speech:
             print("\nReady for a command")
@@ -277,8 +243,7 @@ def activate_virtual_assistant(enable_text_input):
             if "quit" not in converted_speech:
                 print(execute_commands(converted_speech.lower(), True))
 
-        print("Thank you for using this virtual assistant")
-
+        print(exit_message)
     else:
         while "quit" not in converted_speech:
             speak("Ready for a command")
@@ -286,4 +251,4 @@ def activate_virtual_assistant(enable_text_input):
             print(converted_speech)
             if "quit" not in converted_speech:
                 speak(execute_commands(converted_speech.lower(), False))
-        speak("Thank you for using this virtual assistant")
+        speak(exit_message)
