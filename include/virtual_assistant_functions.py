@@ -6,6 +6,7 @@ import speech_recognition as sr
 from gtts import gTTS
 from playsound import playsound
 import cv2
+import art
 
 
 # Returns the current time as a string
@@ -178,11 +179,16 @@ def convert_speech_to_text():
     return converted_speech
 
 
+def help():
+    print("LWVirtualAssistant usage")
+    print("\t")
+
+
 # This function executes the different voice commands that the user might give the virtual assistant.
 # If the trigger phrase is in the converted speech, then the virtual assistant will activate
 # Returns the virtual assistant's response
 def execute_commands(converted_speech, enable_text_input):
-    spoken_phrase = "Trigger phrase was not detected"
+    spoken_phrase = "Trigger phrase was not detected. Please include \"assistant\" in your command."
 
     trigger_phrase = "assistant"
     if trigger_phrase in converted_speech:
@@ -195,7 +201,7 @@ def execute_commands(converted_speech, enable_text_input):
         if "hello" in converted_speech:
             spoken_phrase = "Hello to you too"
         elif "your name" in converted_speech:
-            spoken_phrase = "My name is Assistant, pleased to meet you."
+            spoken_phrase = "My name is LWVirtualAssistant, pleased to meet you."
         elif "joke" in converted_speech:
             spoken_phrase = "How do billboards talk? Sign language."
         elif "date" in converted_speech:
@@ -232,9 +238,10 @@ def execute_commands(converted_speech, enable_text_input):
 
 
 def activate_virtual_assistant(enable_text_input):
-    print("Starting LWVirtualAssistant")
+    header = art.text2art("LWVirtualAssistant")
+    print(header)
 
-    exit_message = "Thank you for using this virtual assistant"
+    exit_message = "Thank you for using this virtual assistant!"
     converted_speech = ""
     if enable_text_input:
         while "quit" not in converted_speech:
@@ -243,7 +250,7 @@ def activate_virtual_assistant(enable_text_input):
             if "quit" not in converted_speech:
                 print(execute_commands(converted_speech.lower(), True))
 
-        print(exit_message)
+        print(f"\n{exit_message}")
     else:
         while "quit" not in converted_speech:
             speak("Ready for a command")

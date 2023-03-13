@@ -1,4 +1,8 @@
 # LWVirtualAssistant
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/leeway64/LWVirtualAssistant)
+
 LWVirtualAssistant is a very basic voice-controlled virtual assistant that can take a selfie, set a
 timer, and create a note, among other features.
 
@@ -7,9 +11,12 @@ timer, and create a note, among other features.
 ```bash
 git clone https://github.com/leeway64/LWVirtualAssistant.git
 cd LWVirtualAssistant
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
-For Ubuntu, you will also have to install portaudio by running `sudo apt install portaudio19-dev`.
+
+For Ubuntu, you will also have to install portaudio by running `sudo apt install portaudio19-dev` before installing requirements.
 
 
 ## Usage
@@ -30,6 +37,48 @@ or type "help" if you are using text input. For example, if you are using text i
 $ python include/start_virtual_assistant.py text_input
 
 
+```
+
+### Example
+Here is an example LWVirtualAssistant session, using shown here with text input enabled for ease of
+demonstration:
+
+```bash
+$ python include/start_virtual_assistant.py text_input
+
+
+ _     __        ____     __ _        _                  _     _               _       _                  _   
+| |    \ \      / /\ \   / /(_) _ __ | |_  _   _   __ _ | |   / \    ___  ___ (_) ___ | |_   __ _  _ __  | |_ 
+| |     \ \ /\ / /  \ \ / / | || '__|| __|| | | | / _` || |  / _ \  / __|/ __|| |/ __|| __| / _` || '_ \ | __|
+| |___   \ V  V /    \ V /  | || |   | |_ | |_| || (_| || | / ___ \ \__ \\__ \| |\__ \| |_ | (_| || | | || |_ 
+|_____|   \_/\_/      \_/   |_||_|    \__| \__,_| \__,_||_|/_/   \_\|___/|___/|_||___/ \__| \__,_||_| |_| \__|
+                                                                                                              
+
+
+Ready for a command
+	Enter a command: hello assistant
+Hello to you too
+
+Ready for a command
+	Enter a command: assistant, what is your name
+My name is LWVirtualAssistant, pleased to meet you.
+
+Ready for a command
+	Enter a command: assistant, what is the date
+The date is 12 March 2023
+
+Ready for a command
+	Enter a command: assistant, what is the time
+The time is 5 29 p.m.
+
+Ready for a command
+	Enter a command: take a selfie
+Trigger phrase was not detected. Please include "assistant" in your command.
+
+Ready for a command
+	Enter a command: quit
+
+Thank you for using this virtual assistant!
 ```
 
 
@@ -53,3 +102,4 @@ Refer to the [bibliography](doc/Bibliography.md) for all sources behind this pro
   recognition using Python.
 - [Playsound](https://pypi.org/project/playsound/) (MIT License): Package for playing sounds using
   Python.
+- [art](https://pypi.org/project/art/) (MIT License): ASCII art Python module.
