@@ -37,6 +37,27 @@ or type "help" if you are using text input. For example, if you are using text i
 $ python include/start_virtual_assistant.py text_input
 
 
+...
+
+
+Ready for a command
+	Enter a command: assistant help
+
+'LWVirtualAssistant usage'
+	Every command must include "assistant" to activate the virtual assistant
+	To quit, simply type "quit"
+
+Feature			Trigger word(s)/usage
+
+Say hello			hello
+Introduce self		your name
+Tell a joke			joke
+Display date		date
+Display time		the time
+Set a timer			timer for [MIN] minutes, [SEC] seconds (MIN and SEC being numerals)
+Take a selfie		selfie
+Create a note		note, reminder, write this down, remember
+Print usage			help
 ```
 
 ### Example
@@ -102,4 +123,4 @@ Refer to the [bibliography](doc/Bibliography.md) for all sources behind this pro
   recognition using Python.
 - [Playsound](https://pypi.org/project/playsound/) (MIT License): Package for playing sounds using
   Python.
-- [art](https://pypi.org/project/art/) (MIT License): ASCII art Python module.
+- [ART](https://pypi.org/project/art/) (MIT License): ASCII art Python module.

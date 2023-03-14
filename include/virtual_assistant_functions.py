@@ -1,6 +1,7 @@
 from datetime import datetime
 import os
 import time
+import pprint
 
 import speech_recognition as sr
 from gtts import gTTS
@@ -75,11 +76,18 @@ def set_timer(converted_speech, enable_text_input):
 
 # Creates a txt file based on a text input. txt file is named after the time at which it was created.
 def create_note(text):
+    output_directory = "notes"
+    try: 
+        os.mkdir(output_directory)
+    except OSError: 
+        pass  # If the directory already exists, ignore the error
+    
     date = datetime.now()
 
     # Name the txt file after the time of its creation
     file_name = str(date).replace(":", "-") + "-note.txt"
-    with open(file_name, "w") as f:
+    output_file = os.path.join(output_directory, file_name)
+    with open(output_file, "w") as f:
         f.write(text)
 
 
@@ -180,8 +188,22 @@ def convert_speech_to_text():
 
 
 def help():
-    print("LWVirtualAssistant usage")
-    print("\t")
+    tabs = "\t\t\t"
+    pprint.pprint("LWVirtualAssistant usage")  # pprint can pretty-print Python data structures
+    print("\tEvery command must include \"assistant\" to activate the virtual assistant")
+    print("\tTo quit, simply type \"quit\"")
+    print()
+    
+    print(f"Feature{tabs}Trigger word(s)/usage\n")
+    print(f"Say hello{tabs}hello")
+    print(f"Introduce self{tabs}your name")
+    print(f"Tell a joke{tabs}joke")
+    print(f"Display date{tabs}date")
+    print(f"Display time{tabs}the time")
+    print(f"Set a timer{tabs}timer for [MIN] minutes, [SEC] seconds (MIN and SEC being numerals)")
+    print(f"Take a selfie{tabs}selfie")
+    print(f"Create a note{tabs}note, reminder, write this down, remember")
+    print(f"Print usage{tabs}help")
 
 
 # This function executes the different voice commands that the user might give the virtual assistant.
@@ -210,6 +232,13 @@ def execute_commands(converted_speech, enable_text_input):
             spoken_phrase = get_clock_time()
         elif "timer for" in converted_speech:
             spoken_phrase = set_timer(converted_speech, enable_text_input)
+        elif "help" in converted_speech:
+            spoken_phrase = "Printing out usage to terminal"
+            if enable_text_input:
+                spoken_phrase = ""
+                
+            print()
+            help()
         elif take_selfie_condition:
             spoken_phrase = "Opening camera. Press q to take a selfie."
             if enable_text_input:
